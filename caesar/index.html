@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caesar Cipher game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div id="container" class="flex flex-col gap-3 p-20 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
+      <div class="speech">Put the text to cipher in the input</div>
+      <div class="input">
+        <form id="form">
+          Input text:
+          <input type="text" id="cypher" class="border roundedp-2" />
+          Offset:
+          <input type="number" value="7" id="offset" class="border rounded p-2" />
+          Encrypted text:
+          <input type="text" id="finish" class="border rounded p-2" />
+        </form>
+      </div>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
