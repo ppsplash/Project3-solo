@@ -18,7 +18,7 @@ const result = text.map((each) => {
 
   const absOffset = Math.abs(offset) % 26;
   const effOffset = 26 - absOffset;
-  encIndex = currentIndex + effOffset;
+  encIndex = (currentIndex + effOffset) % 26;
   return arrAlphabet[encIndex];
 });
 console.log(result.join(""));

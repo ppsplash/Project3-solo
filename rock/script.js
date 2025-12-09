@@ -1,7 +1,8 @@
 const options = document.querySelectorAll("#rock,#paper,#scissors");
 const button = document.getElementById("play-button");
 const result = document.getElementById("result");
-
+let userScore = 0;
+let computerScore = 0;
 const computerOptions = ["rock", "paper", "scissors"];
 function randomChoice(arr) {
   return arr[Math.floor(arr.length * Math.random())];
@@ -40,25 +41,25 @@ button.addEventListener("click", (e) => {
   const cScore = document.getElementById("computer-score");
   if (userChoice === compChoice) {
     result.textContent = "Draw. Please play again";
-    cScore.textContent = "0";
-    uScore.textContent = "0";
   } else if (userChoice === "rock" && compChoice === "paper") {
     result.textContent = "Paper wins";
-    cScore.textContent = "1";
+    computerScore++;
   } else if (userChoice === "paper" && compChoice === "scissors") {
     result.textContent = "Scissor wins";
-    cScore.textContent = "1";
+    computerScore++;
   } else if (userChoice === "rock" && compChoice === "scissors") {
     result.textContent = "Rock wins";
-    uScore.textContent = "1";
+    userScore++;
   } else if (userChoice === "paper" && compChoice === "rock") {
     result.textContent = "Paper wins";
-    uScore.textContent = "1";
+    userScore++;
   } else if (userChoice === "scissors" && compChoice === "paper") {
     result.textContent = "Scissor wins";
-    uScore.textContent = "1";
+    userScore++;
   } else if (userChoice === "scissors" && compChoice === "rock") {
     result.textContent = "Rock wins";
-    cScore.textContent = "1";
+    computerScore++;
   }
+  uScore.textContent = userScore;
+  cScore.textContent = computerScore;
 });
